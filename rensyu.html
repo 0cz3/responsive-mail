@@ -40,7 +40,23 @@
                                         <td style="padding: 20px 0;">
                                 <![end if]-->
                                 <div class="outer" style="background-color: tomato; width: 96%; max-width: 660px; margin: 20px auto;">
-                                    [content goes here]
+                                    <table role="presentation" style="width: 100%; border: 0; border-spacing: 0;">
+                                        <tr>
+                                            <td style="padding: 10px 10xp 20px 10px; font-family: Arial, Helvetica, sans-serif; font-size: 24px; line-height: 28px; font-weight: bold;">
+                                                <img src="./images/header.png" width="640" alt="" style="width: 100%; height: auto;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <!-- テキストがその上のtd align="center"から継承される一部のクライアントで中央に配置されないようにしている。 -->
+                                            <td style="padding: 10px; text-align: left;">
+                                                <!-- <h1> タグと <p> タグはmarginが強制的に適用されるメーラーがあるため上書きする -->
+                                                <h1 style="margin-top: 0; margin-bottom: 16px; font-family: Arial, Helvetica, sans-serif; font-size: 26px; line-height: 32px; font-weight: bold;">Creating responsive email magic</h1>
+                                                <p style="margin:0;font-family:Arial,sans-serif;font-size:18px;line-height:24px;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus!</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- line-height, height, set mso-line-height-rule:exactly; line-heightが最小値で扱われることを防ぐ-->
+                                    <div class="spacer" style="line-height: 26px; height: 26px; mso-line-height-rule: exactly;"></div>
                                 </div>
                                 <!--[if mso]>
                                         </td>
