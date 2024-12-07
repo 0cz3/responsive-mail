@@ -24,11 +24,32 @@
     <![endif]-->
 </head>
 <body style="margin:0;padding:0;word-spacing:normal;background-color:#ffffff;">
+    <!-- wrapper-div -->
     <div role="article" aria-roledescription="email" lang="en" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#ffffff;">
+        <!-- tableはComcast,Liberoのため、省略しても良いかも知れない -->
         <table role="presentation" style="width:100%;border:0;border-spacing:0;">
             <tr>
                 <td align="center">
-                    [content goes here]
+                    <table role="presentation" align="center" style="background-color: cadetblue; width: 660px;">
+                        <tr>
+                            <td style="padding: 20px 0;">
+                                <!-- outlook以外はdiv,outlookはtableで組みたい。msoのゴーストテーブルを追加 -->
+                                <!--[if mso]>
+                                <table role="presentation" align="center" style="width: 660px;">
+                                    <tr>
+                                        <td style="padding: 20px 0;">
+                                <![end if]-->
+                                <div class="outer" style="background-color: tomato; width: 96%; max-width: 660px; margin: 20px auto;">
+                                    [content goes here]
+                                </div>
+                                <!--[if mso]>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <![end if]-->
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
         </table>
