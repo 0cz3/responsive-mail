@@ -69,7 +69,17 @@
                             <!-- パディングを除いたカラム幅を何度も計算する手間を省くため、パディングと一緒に余分なdivをネスト,CSSのボックスモデルは、要素に追加されたパディングが外側にも適用され、全体の幅が広くなる
                             （たとえば、330pxのカラムの両側に10pxのパディングがある場合、幅は350px）。 通常、HTMLではbox-sizing: border-box;を使用することで、パディングも幅に含めることができるが、メールクライアントによってはうまくサポートされていない。 -->
                             <div style="padding:10px;">
-                                [content goes here]
+                                <!-- GmailやGoogle Workplaceの画像の下に隙間があっても構わない場合は、画像のCSSからdisplay:block;を削除。次に、<p>タグのCSSでtext-alignを好きなように設定。画像はそこからアライメントを継承。 -->
+                                <!-- GmailやGoogle Workspaceの画像の下に隙間を作りたくない場合は、display:blockを保持。margin-left:auto;を画像タグのCSSに追加し、align="center "をゴーストテーブルの親セルに追加。 display:block画像を右寄せにするには、margin-left:auto;margin-right:0;を画像タグのCSSに追加し、align="right "をゴーストテーブルの親セルに追加。 -->
+                                <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 18px;">
+                                    <!-- 画像の幅は310px（330pxのカラムから両サイドの10pxのパディングを引いたもの）
+                                    width="310"はwindows outlook用
+                                    Gmailで画像の下に隙間ができないように、CSSでdisplay:block;を設定。
+                                    他のすべてのモバイルとデスクトップクライアントで画像が常に列幅の最大100%になるように、max-width:100%;を設定。
+                                    また、height:auto;も追加し、画像が引き伸ばされることがないようにする。 -->
+                                    <!-- ピクセルの最大幅 2021年半ば頃、iOSとAndroidのOutlookアプリがimgタグのピクセル最大幅をサポートしなくなったため追記 -->
+                                    <img src="images/two-column-01.png" width="310" alt="" style="display: block; width: 310px; max-width: 100%; height: auto;">
+                                </p>
                             </div>
                         </div>
                         <!--[if mso]>
@@ -78,8 +88,15 @@
                         </table>
                         <![end if]-->
                         <div class="column" style="background-color: plum; width: 100%; max-width: 330px; display: inline-block; vertical-align: middle;">
-                            <div style="padding:10px;">
-                                [content goes here]
+                            <!-- font-sizeがないと文字自体表示されない -->
+                            <div style="padding:10px; font-size: 14px; line-height: 18px; text-align: left;">
+                                <p style="margin-top: 0; margin-bottom: 12px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Taciti nostra, per litora nostra</p>
+                                <p style="margin-top: 0; margin-bottom: 12px; font-family: Arial, Helvetica, sans-serif;">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sed ante pellentesque.</p>
+                                <p style="margin: 0; font-family: Arial, Helvetica, sans-serif;"><a href="https://example.com/" style="background-color: #ffffff; border: 2px solid #8dc1d5; text-decoration: none; padding: 10px 25px; color: #000000; border-radius: 4px; display: inline-block; mso-padding-alt: 0; text-underline-color: #ffffff;">
+                                    <!--[if mso]><i style="letter-spacing: 25px; mso-font-width: -100%; mso-text-raise:20pt;">&nbsp;</i><![end if]-->
+                                    <span style="mso-text-raise: 10pt; font-weight: bold;">Claim yours now</span>
+                                    <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]-->
+                                </a></p>
                             </div>
                         </div>
                         <!--[if mso]>
@@ -88,6 +105,8 @@
                         </table>
                         <![end if]-->
                     </div>
+
+                    <div class="spacer" style="line-height:24px;height:24px;mso-line-height-rule:exactly;">&nbsp;</div>
                     <!--[if mso]>
                             </td>
                         </tr>
