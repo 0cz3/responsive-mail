@@ -105,7 +105,46 @@
                         </table>
                         <![end if]-->
                     </div>
-
+                    <div class="spacer" style="line-height:24px;height:24px;mso-line-height-rule:exactly;">&nbsp;</div>
+                    <!-- dir="rtl"(HTML)またはdirection:rtl(CSS)がコンテナに設定されている場合、要素は逆の順序でスタックされる。 (各メールクライアントに対して、要素を逆の順序でレンダリングするように指示) -->
+                    <div class="two-col" style="background-color: pink; text-align: center; font-size: 0; direction: rtl;">
+                        <!-- outlook用にdir="rtl"追加 -->
+                        <!--[if mso]>
+                        <table role="presentation" width="100% dir="rtl"">
+                            <tr>
+                                <td style="width: 50%; padding:10px;" valign="middle">
+                        <![end if]-->
+                        <div class="column" style="background-color: orange; width: 100%; max-width: 330px; display: inline-block; vertical-align: middle;">
+                            <div style="padding:10px;">
+                                <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 18px;">
+                                    <img src="images/two-column-02.png" width="310" alt="" style="display: block; width: 310px; max-width: 100%; height: auto;">
+                                </p>
+                            </div>
+                        </div>
+                        <!-- テキストのdirectionも継承して変になってるかもなので、direction:ltr;を入れておく -->
+                        <!--[if mso]>
+                                </td>
+                                <td style="width: 50%; padding:10px;" valign="middle" dir="ltr">
+                        </table>
+                        <![end if]-->
+                        <div class="column" style="background-color: plum; width: 100%; max-width: 330px; display: inline-block; vertical-align: middle;">
+                            <!-- テキストのdirectionも継承して変になってるかもなので、direction:ltr;を入れておく -->
+                            <div style="padding:10px; font-size: 14px; line-height: 18px; text-align: left; direction:ltr;">
+                                <p style="margin-top: 0; margin-bottom: 12px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Conubia nostra, per inceptos himenaeos</p>
+                                <p style="margin-top: 0; margin-bottom: 12px; font-family: Arial, Helvetica, sans-serif;">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sed ante pellentesque.</p>
+                                <p style="margin: 0; font-family: Arial, Helvetica, sans-serif;"><a href="https://example.com/" style="background-color: #ffffff; border: 2px solid #8dc1d5; text-decoration: none; padding: 10px 25px; color: #000000; border-radius: 4px; display: inline-block; mso-padding-alt: 0; text-underline-color: #ffffff;">
+                                    <!--[if mso]><i style="letter-spacing: 25px; mso-font-width: -100%; mso-text-raise:20pt;">&nbsp;</i><![end if]-->
+                                    <span style="mso-text-raise: 10pt; font-weight: bold;">Lock it in</span>
+                                    <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]-->
+                                </a></p>
+                            </div>
+                        </div>
+                        <!--[if mso]>
+                                </td>
+                            </tr>
+                        </table>
+                        <![end if]-->
+                    </div>
                     <div class="spacer" style="line-height:24px;height:24px;mso-line-height-rule:exactly;">&nbsp;</div>
                     <!--[if mso]>
                             </td>
