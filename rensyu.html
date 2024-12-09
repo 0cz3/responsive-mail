@@ -30,75 +30,69 @@
         <table role="presentation" style="width:100%; border:0; border-spacing:0;">
             <tr>
                 <td align="center">
-                    <!-- <table role="presentation" align="center" style="background-color: cadetblue; width: 660px; width:100%; border:0; border-spacing:0;">
+                    <!-- outlook以外はdiv,outlookはtableで組みたい。msoのゴーストテーブルを追加 -->
+                    <!--[if mso]>
+                    <table role="presentation" align="center" style="width: 660px;">
                         <tr>
-                            <td style="padding: 20px 0;"> -->
-                                <!-- outlook以外はdiv,outlookはtableで組みたい。msoのゴーストテーブルを追加 -->
-                                <!--[if mso]>
-                                <table role="presentation" align="center" style="width: 660px;">
-                                    <tr>
-                                        <td style="padding: 20px 0;">
-                                <![end if]-->
-                                <div class="outer" style="background-color: tomato; width: 96%; max-width: 660px; margin: 20px auto;">
-                                    <table role="presentation" style="width: 100%; border: 0; border-spacing: 0;">
-                                        <tr>
-                                            <td style="padding: 10px 10xp 20px 10px; font-family: Arial, Helvetica, sans-serif; font-size: 24px; line-height: 28px; font-weight: bold;">
-                                                <img src="./images/header.png" width="640" alt="" style="width: 100%; height: auto;">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <!-- テキストがその上のtd align="center"から継承される一部のクライアントで中央に配置されないようにしている。 -->
-                                            <td style="padding: 10px; text-align: left;">
-                                                <!-- <h1> タグと <p> タグはmarginが強制的に適用されるメーラーがあるため上書きする -->
-                                                <h1 style="margin-top: 0; margin-bottom: 16px; font-family: Arial, Helvetica, sans-serif; font-size: 26px; line-height: 32px; font-weight: bold;">Creating responsive email magic</h1>
-                                                <p style="margin:0;font-family:Arial,sans-serif;font-size:18px;line-height:24px;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus!</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- line-height, height, set mso-line-height-rule:exactly; line-heightが最小値で扱われることを防ぐ-->
-                                    <div class="spacer" style="line-height: 26px; height: 26px; mso-line-height-rule: exactly;"></div>
-                                </div>
-                                <!-- font-size:0がないと余分な隙間が空いてしまう -->
-                                <div class="two-col" style="background-color: pink; text-align: center; font-size: 0;">
-                                    <!-- ゴーストセルもdivとvalignを合わせなければいけない -->
-                                    <!--[if mso]>
-                                    <table role="presentation" width="100%">
-                                        <tr>
-                                            <td style="width: 50%; padding:10px;" valign="middle">
-                                    <![end if]-->
-                                    <!-- display: inline-block;で外の幅が十分ある時横並びで配置-->
-                                    <!-- vertical-align: middle;で２列以上の時に上下真ん中揃えで配置 -->
-                                    <div class="column" style="background-color: orange; width: 100%; max-width: 330px; display: inline-block; vertical-align: middle;">
-                                        <!-- パディングを除いたカラム幅を何度も計算する手間を省くため、パディングと一緒に余分なdivをネスト,CSSのボックスモデルは、要素に追加されたパディングが外側にも適用され、全体の幅が広くなる
-                                        （たとえば、330pxのカラムの両側に10pxのパディングがある場合、幅は350px）。 通常、HTMLではbox-sizing: border-box;を使用することで、パディングも幅に含めることができるが、メールクライアントによってはうまくサポートされていない。 -->
-                                        <div style="padding:10px;">
-                                            [content goes here]
-                                        </div>
-                                    </div>
-                                    <!--[if mso]>
-                                            </td>
-                                            <td style="width: 50%; padding:10px;" valign="middle">
-                                    </table>
-                                    <![end if]-->
-                                    <div class="column" style="background-color: plum; width: 100%; max-width: 330px; display: inline-block; vertical-align: middle;">
-                                        <div style="padding:10px;">
-                                            [content goes here]
-                                        </div>
-                                    </div>
-                                    <!--[if mso]>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <![end if]-->
-                                </div>
-                                <!--[if mso]>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <![end if]-->
-                            <!-- </td>
+                            <td style="padding: 20px 0;">
+                    <![end if]-->
+                    <div class="outer" style="background-color: tomato; width: 96%; max-width: 660px; margin: 20px auto;">
+                        <table role="presentation" style="width: 100%; border: 0; border-spacing: 0;">
+                            <tr>
+                                <td style="padding: 10px 10xp 20px 10px; font-family: Arial, Helvetica, sans-serif; font-size: 24px; line-height: 28px; font-weight: bold;">
+                                    <img src="./images/header.png" width="640" alt="" style="width: 100%; height: auto;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- テキストがその上のtd align="center"から継承される一部のクライアントで中央に配置されないようにしている。 -->
+                                <td style="padding: 10px; text-align: left;">
+                                    <!-- <h1> タグと <p> タグはmarginが強制的に適用されるメーラーがあるため上書きする -->
+                                    <h1 style="margin-top: 0; margin-bottom: 16px; font-family: Arial, Helvetica, sans-serif; font-size: 26px; line-height: 32px; font-weight: bold;">Creating responsive email magic</h1>
+                                    <p style="margin:0;font-family:Arial,sans-serif;font-size:18px;line-height:24px;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus!</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- line-height, height, set mso-line-height-rule:exactly; line-heightが最小値で扱われることを防ぐ-->
+                        <div class="spacer" style="line-height: 26px; height: 26px; mso-line-height-rule: exactly;"></div>
+                    </div>
+                    <!-- font-size:0がないと余分な隙間が空いてしまう -->
+                    <div class="two-col" style="background-color: pink; text-align: center; font-size: 0;">
+                        <!-- ゴーストセルもdivとvalignを合わせなければいけない -->
+                        <!--[if mso]>
+                        <table role="presentation" width="100%">
+                            <tr>
+                                <td style="width: 50%; padding:10px;" valign="middle">
+                        <![end if]-->
+                        <!-- display: inline-block;で外の幅が十分ある時横並びで配置-->
+                        <!-- vertical-align: middle;で２列以上の時に上下真ん中揃えで配置 -->
+                        <div class="column" style="background-color: orange; width: 100%; max-width: 330px; display: inline-block; vertical-align: middle;">
+                            <!-- パディングを除いたカラム幅を何度も計算する手間を省くため、パディングと一緒に余分なdivをネスト,CSSのボックスモデルは、要素に追加されたパディングが外側にも適用され、全体の幅が広くなる
+                            （たとえば、330pxのカラムの両側に10pxのパディングがある場合、幅は350px）。 通常、HTMLではbox-sizing: border-box;を使用することで、パディングも幅に含めることができるが、メールクライアントによってはうまくサポートされていない。 -->
+                            <div style="padding:10px;">
+                                [content goes here]
+                            </div>
+                        </div>
+                        <!--[if mso]>
+                                </td>
+                                <td style="width: 50%; padding:10px;" valign="middle">
+                        </table>
+                        <![end if]-->
+                        <div class="column" style="background-color: plum; width: 100%; max-width: 330px; display: inline-block; vertical-align: middle;">
+                            <div style="padding:10px;">
+                                [content goes here]
+                            </div>
+                        </div>
+                        <!--[if mso]>
+                                </td>
+                            </tr>
+                        </table>
+                        <![end if]-->
+                    </div>
+                    <!--[if mso]>
+                            </td>
                         </tr>
-                    </table> -->
+                    </table>
+                    <![end if]-->
                 </td>
             </tr>
         </table>
