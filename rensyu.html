@@ -27,12 +27,12 @@
     <!-- wrapper-div -->
     <div role="article" aria-roledescription="email" lang="en" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#ffffff;">
         <!-- tableはComcast,Liberoのため、省略しても良いかも知れない -->
-        <table role="presentation" style="width:100%;border:0;border-spacing:0;">
+        <table role="presentation" style="width:100%; border:0; border-spacing:0;">
             <tr>
                 <td align="center">
-                    <table role="presentation" align="center" style="background-color: cadetblue; width: 660px;">
+                    <!-- <table role="presentation" align="center" style="background-color: cadetblue; width: 660px; width:100%; border:0; border-spacing:0;">
                         <tr>
-                            <td style="padding: 20px 0;">
+                            <td style="padding: 20px 0;"> -->
                                 <!-- outlook以外はdiv,outlookはtableで組みたい。msoのゴーストテーブルを追加 -->
                                 <!--[if mso]>
                                 <table role="presentation" align="center" style="width: 660px;">
@@ -58,14 +58,47 @@
                                     <!-- line-height, height, set mso-line-height-rule:exactly; line-heightが最小値で扱われることを防ぐ-->
                                     <div class="spacer" style="line-height: 26px; height: 26px; mso-line-height-rule: exactly;"></div>
                                 </div>
+                                <!-- font-size:0がないと余分な隙間が空いてしまう -->
+                                <div class="two-col" style="background-color: pink; text-align: center; font-size: 0;">
+                                    <!-- ゴーストセルもdivとvalignを合わせなければいけない -->
+                                    <!--[if mso]>
+                                    <table role="presentation" width="100%">
+                                        <tr>
+                                            <td style="width: 50%; padding:10px;" valign="middle">
+                                    <![end if]-->
+                                    <!-- display: inline-block;で外の幅が十分ある時横並びで配置-->
+                                    <!-- vertical-align: middle;で２列以上の時に上下真ん中揃えで配置 -->
+                                    <div class="column" style="background-color: orange; width: 100%; max-width: 330px; display: inline-block; vertical-align: middle;">
+                                        <!-- パディングを除いたカラム幅を何度も計算する手間を省くため、パディングと一緒に余分なdivをネスト,CSSのボックスモデルは、要素に追加されたパディングが外側にも適用され、全体の幅が広くなる
+                                        （たとえば、330pxのカラムの両側に10pxのパディングがある場合、幅は350px）。 通常、HTMLではbox-sizing: border-box;を使用することで、パディングも幅に含めることができるが、メールクライアントによってはうまくサポートされていない。 -->
+                                        <div style="padding:10px;">
+                                            [content goes here]
+                                        </div>
+                                    </div>
+                                    <!--[if mso]>
+                                            </td>
+                                            <td style="width: 50%; padding:10px;" valign="middle">
+                                    </table>
+                                    <![end if]-->
+                                    <div class="column" style="background-color: plum; width: 100%; max-width: 330px; display: inline-block; vertical-align: middle;">
+                                        <div style="padding:10px;">
+                                            [content goes here]
+                                        </div>
+                                    </div>
+                                    <!--[if mso]>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <![end if]-->
+                                </div>
                                 <!--[if mso]>
                                         </td>
                                     </tr>
                                 </table>
                                 <![end if]-->
-                            </td>
+                            <!-- </td>
                         </tr>
-                    </table>
+                    </table> -->
                 </td>
             </tr>
         </table>
